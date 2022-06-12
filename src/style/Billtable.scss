@@ -1,0 +1,103 @@
+@import "../../node_modules/pixel-borders/src/styles/pixel-borders.scss";
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin size($w,$h:$w){
+    width: $w;
+    height: $h
+}
+
+@mixin font-family(){
+    font-family: "DotGothic16";
+}
+
+.books{
+    z-index: 1;
+    position: fixed;
+    @include size(80vw, 100vh);
+    background-image: url("../images/books.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left:-7%;
+    bottom: 2%;
+}
+
+.tablewrapper{
+    width: fit-content;
+    height: 80vh;
+    position: relative;
+    left: 32%;   
+    top: 10vh; 
+    z-index: 2;
+    
+    overflow-y: scroll;
+    table{
+        width: 31vw;
+    }
+    th{
+        @include font-family();
+        height: 3rem;
+    }
+}
+
+.btngroup{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    @include size(200px,400px,);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+
+    .monthbtn{
+        height: 100px;
+        @include font-family();
+        @include pixel-box(
+        $border-color: rgb(255, 255, 255),
+        $corner-size:2,
+        $border-size: 4px,
+        $background-color: rgba(#192A35,0.8),
+        $border-inset: false,
+    );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    .monthbtn + .monthbtn{
+        margin-top: 60px;
+    }
+}
+/* width */
+::-webkit-scrollbar {
+    position: relative;
+
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #E75B5A;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    background: rgb(229, 228, 228);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    transition: 0.5s;
+    background: #555;
+}

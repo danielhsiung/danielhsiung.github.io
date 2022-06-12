@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+html, body {
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bg {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-image: url("../images/congrates bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.notdisplay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tag {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 30vw;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tag h1 {
+  font-family: "DotGothic16";
+}
+
+.axis {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.axis:hover {
+  color: palevioletred;
+}
+/*# sourceMappingURL=congragulations.css.map */
