@@ -1,0 +1,127 @@
+@import "../../node_modules/pixel-borders/src/styles/pixel-borders.scss";
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin size($w,$h:$w){
+    width: $w;
+    height: $h
+}
+
+@mixin font-family(){
+    font-family: "DotGothic16";
+}
+
+@mixin image($url){
+    background-image: url($url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.books{
+    z-index: 1;
+    position: fixed;
+    @include size(80vw, 100vh);
+    background-image: url("../images/books.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left:-7%;
+    bottom: 2%;
+}
+
+.awardrow{
+    display: flex;
+    z-index: 2;
+    position: relative;
+    width: fit-content;
+    height: 17vh;
+    left: 37%;   
+    top: 25vh;
+}
+
+.enabled, .display{
+    width: 6vw;
+    // border: 1px solid black;
+}
+
+.enabled1{
+    @include image("../images/1-0.png")
+}
+
+.enabled2{
+    @include image("../images/2-0.png")
+}
+
+.enabled3{
+    @include image("../images/3-0.png")
+}
+
+.enabled4{
+    @include image("../images/4-0.png")
+}
+
+.enabled5{
+    @include image("../images/5-0.png")
+}
+
+.enabled6{
+    @include image("../images/6-0.png")
+}
+
+.enabled7{
+    @include image("../images/7-0.png")
+}
+
+.enabled8{
+    @include image("../images/8-0.png")
+}
+
+.enabled9{
+    @include image("../images/9-0.png")
+}
+
+.enabled + .enabled{
+margin-left: 30px;
+}
+
+.display1{
+    @include image("../images/1-1.png")
+}
+
+.display2{
+    @include image("../images/2-1.png")
+}
+
+.display3{
+    @include image("../images/3-1.png")
+}
+
+.display4{
+    @include image("../images/4-1.png")
+}
+
+.display5{
+    @include image("../images/5-1.png")
+}
+
+.display6{
+    @include image("../images/6-1.png")
+}
+
+.display7{
+    @include image("../images/7-1.png")
+}
+
+.display8{
+    @include image("../images/8-1.png")
+}
+
+.display9{
+    @include image("../images/9-1.png")
+}

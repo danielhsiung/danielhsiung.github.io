@@ -1,0 +1,39 @@
+name: verify task branch
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+          cache: "npm"
+      - run: npm install
+      - run: npm run lint
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+          cache: "npm"
+      - run: npm install
+      - run: npm run test a
+  try_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "17"
+          cache: "npm"
+      - run: |
+          npm install
+          npm run build

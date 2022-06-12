@@ -1,0 +1,211 @@
+@import "../../node_modules/pixel-borders/src/styles/pixel-borders.scss";
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin size($w,$h:$w){
+    width: $w;
+    height: $h
+}
+
+@mixin font-family(){
+    font-family: "DotGothic16";
+}
+
+body,html{
+    @include size(100vw,100vh);
+    margin: 0;
+    
+}
+
+.wrap{
+    position: fixed;
+    @include size(100vw,100vh);
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.blood{
+    @include size(40vw, 2rem);
+    @include pixel-box(
+        $border-color: #fff,
+        $corner-size:2,
+        $border-size: 4px,
+        $background-color: rgba(#A8102b,0),
+        $border-inset: false,
+    );
+    position: relative;
+
+    .blood_play{
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color:#A8102b;
+        border-radius: 8%;
+        transform-origin: center left;
+        transform: scale(1,1);
+    }
+    
+}
+
+.monster{
+    @include size(30vw,30vh);
+    background-image: url(../images/monster.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.attack{
+    @include size(30vw,30vh);
+    background-image: url(../images/attacked.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.dead{
+    @include size(30vw,30vh);
+    background-image: url(../images/attacked.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    animation: dead 1s linear ;
+}
+
+@keyframes dead{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.form{
+   width: 50vw;
+   padding: 50px 0;
+   @include pixel-box(
+       $border-color: #fff,
+       $corner-size:2,
+       $border-size: 4px,
+       $background-color: rgba(#181C38,0.9),
+       $border-inset: false,
+   );
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .inputarea{
+    display: flex;
+    width: 90%;
+    
+
+    .select{
+        padding: 10px 6px;
+        flex: 3;
+        @include font-family();
+        @include pixel-box(
+            $border-color: #000,
+            $corner-size: 2,
+            $border-size: 3px,
+            $background-color: #fff,
+            $border-inset: false,
+        );
+    }
+
+    .inputbox{
+        flex: 7;
+        color: white;
+        margin-left: 1rem;
+        padding: 11px 6px;
+        letter-spacing: 5px;
+        @include font-family();
+        @include pixel-box(
+            $border-color: #fff,
+            $corner-size:2,
+            $border-size: 3px,
+            $background-color: rgba(#181C38,0.9),
+            $border-inset: false,
+        );
+    }
+   }
+
+   button{
+        padding: 10px 30px;
+       margin-top: 40px;
+       color: white;
+       font-size: 1.2rem;
+        letter-spacing: 2px;
+       @include font-family();
+       @include pixel-box(
+            $border-color: #fff,
+            $corner-size: 2,
+            $border-size: 2px,
+            $background-color: rgba(#181C38,0.9),
+            $border-inset: false,
+        );
+   }
+
+   
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.diary, .home, .award{
+    @include size(84px);
+    position: absolute;
+    right: 40px;
+    
+    background-size: cover;
+    background-position: center;
+
+}
+
+.diary{
+    position: fixed;
+    bottom: 40px;
+    background-image: url("../images/diary.png");
+}
+
+.home{
+    bottom: 144px;
+    position: fixed;
+    background-image: url("../images/home.png")
+}
+
+.award{
+    bottom: 248px;
+    position: fixed;
+    background-image: url("../images/awardbtn.png")
+}
+
+
